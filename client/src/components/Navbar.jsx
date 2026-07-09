@@ -14,29 +14,29 @@ export default function Navbar() {
       <div className="relative w-full max-w-lg">
 
         <Search
-          size={20}
-          className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
+            size={18}
+            className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500"
         />
 
         <input
-          type="text"
-          placeholder="Search employees..."
-          className="
-          w-full
-          rounded-2xl
-          border
-          border-slate-700
-          bg-slate-900/80
-          py-3
-          pl-12
-          pr-5
-          text-white
-          placeholder:text-slate-500
-          outline-none
-          transition-all
-          focus:border-blue-500
-          focus:shadow-[0_0_18px_rgba(59,130,246,.45)]
-          "
+            type="text"
+            placeholder="Search employees..."
+            className="
+                w-full
+                rounded-xl
+                bg-slate-900
+                border
+                border-slate-700
+                py-3
+                pl-14
+                pr-4
+                text-white
+                placeholder:text-slate-500
+                outline-none
+                focus:border-blue-500
+                focus:ring-2
+                focus:ring-blue-500/20
+            "
         />
 
       </div>
