@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://prodigy-fs-02-y8vn.onrender.com/api",
 });
 
 API.interceptors.request.use((config) => {
@@ -20,7 +20,8 @@ export const getEmployees = () => API.get("/employees");
 
 export const getEmployee = (id) => API.get(`/employees/${id}`);
 
-export const createEmployee = (data) => API.post("/employees", data);
+export const createEmployee = (data) =>
+  API.post("/employees", data);
 
 export const updateEmployee = (id, data) =>
   API.put(`/employees/${id}`, data);
