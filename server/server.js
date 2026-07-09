@@ -14,22 +14,34 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+// CORS
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://prodigy-fs-02-azure.vercel.app",
+    ],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use(cookieParser());
 
+// Routes
 const authRoutes = require("./routes/authRoutes");
 const employeeRoutes = require("./routes/employeeRoutes");
 
 app.use("/api/auth", authRoutes);
 app.use("/api/employees", employeeRoutes);
 
+// Home Route
 app.get("/", (req, res) => {
-    res.send("Employee Management API Running...");
+  res.send("Employee Management API Running...");
 });
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
